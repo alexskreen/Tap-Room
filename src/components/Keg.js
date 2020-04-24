@@ -1,13 +1,13 @@
 import React from "react";
 
 function Keg() {
-  const name = "Alex";
-  const name2 = "Cory";
+  const beer1 = "Over Ripe";
+  const beer2 = "Planets Gotta Roll";
   return (
     <React.Fragment>
       <h3>3a</h3>
       <h3>
-        {name} and {name2}
+        {beer1} and {beer2}
       </h3>
       <p>
         <em>Firebase entries not saving!</em>
