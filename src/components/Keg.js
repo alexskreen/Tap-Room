@@ -13,11 +13,12 @@ function Keg(props) {
   );
 }
 
-Ticket.PropTypes = {
+Keg.propTypes = {
   brewery: PropTypes.string,
   beer: PropTypes.string,
   beerType: PropTypes.string,
   ABV: PropTypes.string,
+  Pints: PropTypes.number
 };
 
 export default Keg;
