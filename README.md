@@ -9,7 +9,15 @@
 This application is a static taphouse website built using only React components.
 
 _Component structure:_
+
 ![component structure](/taphouse_diagram.png)
+
+_User Stories:_
+* A user can see a tap list of all available kegs. For each beer they can see the brewery, name of beer, type of beer, and the ABV
+* A user can add a new keg to the taplist
+* A user can click on a keg to see it's details
+* A user can see how many pints are left in a keg
+* A user can buy a pint of beer and the pints left in that keg will decrease. This cannot go below 1.
 
 ## Setup/Installation Requirements
 
