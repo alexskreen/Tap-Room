@@ -26,18 +26,16 @@ const masterKegList = [
 function TapList() {
   return (
     <React.Fragment>
-      <Keg
-        brewery="Great Notion Brewing"
-        beer="Over Ripe IPA"
-        beerType="NE IPA"
-        ABV="7%"
-      />
-      <Keg
-        brewery="Monkish Brewing"
-        beer="Planets Gotta Roll"
-        beerType="Double NE IPA"
-        ABV="8.3%"
-      />
+      <hr/>
+      {masterKegList.map((keg, index) =>
+        <Keg 
+        brewery = {keg.brewery}
+        beer = {keg.beer}
+        beerType = {keg.beerType}
+        ABV = {keg.ABV}
+        pints = {keg.pints}
+        key = {index}/>
+      )}
     </React.Fragment>
   );
 }

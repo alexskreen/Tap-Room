@@ -18,7 +18,7 @@ Keg.propTypes = {
   beer: PropTypes.string,
   beerType: PropTypes.string,
   ABV: PropTypes.string,
-  Pints: PropTypes.number
+  pints: PropTypes.number
 };
 
 export default Keg;
