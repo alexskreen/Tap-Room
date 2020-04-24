@@ -23,7 +23,7 @@ const masterKegList = [
   }
 ];
 
-function TapList() {
+function KegList() {
   return (
     <React.Fragment>
       <hr/>
@@ -40,4 +40,4 @@ function TapList() {
   );
 }
 
-export default TapList;
+export default KegList;
