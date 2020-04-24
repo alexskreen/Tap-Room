@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 function Keg(props) {
   return (
@@ -11,5 +12,12 @@ function Keg(props) {
     </React.Fragment>
   );
 }
+
+Ticket.PropTypes = {
+  brewery: PropTypes.string,
+  beer: PropTypes.string,
+  beerType: PropTypes.string,
+  ABV: PropTypes.string,
+};
 
 export default Keg;
