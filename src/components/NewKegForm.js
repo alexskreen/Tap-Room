@@ -1,5 +1,5 @@
 import React from "react";
-import { v4 } from 'uuid';
+import { v4 } from "uuid";
 import PropTypes from "prop-types";
 
 function NewKegForm(props) {
@@ -10,13 +10,11 @@ function NewKegForm(props) {
       beer: event.target.beer.value,
       beerType: event.target.beerType.value,
       ABV: event.target.ABV.value,
+      // pints: event.target.pints.value,
       id: v4()
-    });
-    console.log(event.target.brewery.value);
-    console.log(event.target.beer.value);
-    console.log(event.target.beerType.value);
-    console.log(event.target.ABV.value);
+    });  
   }
+
   return (
     <React.Fragment>
       <form onSubmit={handleNewKegFormSubmission}>
