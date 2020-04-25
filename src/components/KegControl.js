@@ -5,11 +5,15 @@ import KegList from "./KegList";
 class KegControl extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      formVisibleOnPage: false
+    };
   }
 
   render() {
-    return <React.Fragment></React.Fragment>;
+    return (
+    <React.Fragment></React.Fragment>
+    );
   }
 }
 
