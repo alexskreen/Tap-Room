@@ -22,7 +22,7 @@ class KegControl extends React.Component {
     let buttonText = null;
     let addKegButton = null;
     if (this.state.formVisibleOnPage) {
-      currentlyVisibleState = <NewKegForm />;
+      currentlyVisibleState = <NewKegForm onNewKegCreation={this.handleAddingNewKegToList} />;
       buttonText = "Return to Keg List";
     } else {
       currentlyVisibleState = <KegList keglist ={this.state.masterKegList} />;
@@ -34,6 +34,14 @@ class KegControl extends React.Component {
         <button onClick={this.handleClick}>{buttonText}</button>
       </React.Fragment>
     );
+  }
+
+  handleAddingNewKegToList = (newKeg) => {
+    const newMasterKegList = this.state.masterKegList.concat(newKeg);
+    this.setState({
+    masterKegList: newMasterKegList,
+    formVisibleOnPage: false
+  });
   }
 }
 
