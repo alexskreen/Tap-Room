@@ -9,7 +9,6 @@ class KegControl extends React.Component {
       formVisibleOnPage: false,
       masterKegList: [],
       selectedKeg: null,
-      slectedKeg: null
     };
   }
 
@@ -35,14 +34,15 @@ class KegControl extends React.Component {
   render() {
     let currentlyVisibleState = null;
     let buttonText = null;
-    let addKegButton = null;
-    if (this.state.formVisibleOnPage) {
-      currentlyVisibleState = (
-        <NewKegForm onNewKegCreation={this.handleAddingNewKegToList} />
-      );
+    // let addKegButton = null;
+    if (this.state.formVisibleOnPage != null) {
+      currentlyVisibleState = <KegDetail keg = {this.state.selectedKeg} />
+      buttonText = "Return to Keg List";
+    }else if (this.state.formVisibleOnPage) {
+      currentlyVisibleState = <NewKegForm onNewKegCreation={this.handleAddingNewKegToList} />;
       buttonText = "Return to Keg List";
     } else {
-      currentlyVisibleState = <KegList kegList={this.state.masterKegList} />;
+      currentlyVisibleState = <KegList kegList={this.state.masterKegList} onKegSelection={this.handleChangingSelectedKeg} />;
       buttonText = "Add Keg";
     }
     return (
