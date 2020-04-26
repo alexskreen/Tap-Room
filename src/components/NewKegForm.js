@@ -10,7 +10,7 @@ function NewKegForm(props) {
       beer: event.target.beer.value,
       beerType: event.target.beerType.value,
       ABV: event.target.ABV.value,
-      // pints: event.target.pints.value,
+      pints: 124,
       id: v4()
     });  
   }

@@ -7,8 +7,15 @@ function KegDetail(props) {
   return (
     <React.Fragment>
       <h1>Keg Details</h1>
-      <h3>{keg.brewery} - {keg.beer}</h3>
-      <p><em>{keg.beerType} - {keg.ABV}</em></p>
+      <h3>
+        {keg.brewery} - {keg.beer}
+      </h3>
+      <p>
+        <em>
+          {keg.beerType} - {keg.ABV} Pints left: {keg.pints}
+        </em>
+      </p>
+      <button onClick={props.onClickingEdit}>Have a pint. You deserve it</button>{" "}
       <hr />
     </React.Fragment>
   );
