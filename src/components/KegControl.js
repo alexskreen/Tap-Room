@@ -53,10 +53,10 @@ class KegControl extends React.Component {
     this.setState({ selectedKeg: null });
   };
 
-  handleDrinkClick = (keg) => {
-  console.log("Drank a pint, didn'tcha?");
-  this.setState({ pints: this.state.pints -1});
-  }
+  // handleDrinkClick = () => {
+  //   console.log("Had yourself a pint!");
+  //   this.setState({})
+  // }
 
   handleChangingSelectedKeg = (id) => {
     const selectedKeg = this.state.masterKegList.filter(
@@ -81,7 +81,6 @@ class KegControl extends React.Component {
         <KegDetail
           keg={this.state.selectedKeg}
           onClickingDelete={this.handleDeletingKeg}
-          // onClickingDrink={this.handleDrinkClick}
         />
       );
       buttonText = "Return to Keg List";

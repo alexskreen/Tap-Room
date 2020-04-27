@@ -12,15 +12,16 @@ function NewKegForm(props) {
       beerType: event.target.beerType.value,
       ABV: event.target.ABV.value,
       pints: 124,
-      id: v4()
-    });  
+      id: v4(),
+    });
   }
 
   return (
     <React.Fragment>
       <ReusableForm
-      formSubmissionHandler={handleNewKegFormSubmission}
-      buttonText="Add Keg" />
+        formSubmissionHandler={handleNewKegFormSubmission}
+        buttonText="Add Keg"
+      />
       {/* <form onSubmit={handleNewKegFormSubmission}>
         <input type="text" name="brewery" placeholder="Brewery" />
         <input type="text" name="beer" placeholder="Beer" />
@@ -33,7 +34,7 @@ function NewKegForm(props) {
 }
 
 NewKegForm.propTypes = {
-  onNewKegCreation: PropTypes.func
+  onNewKegCreation: PropTypes.func,
 };
 
 export default NewKegForm;
