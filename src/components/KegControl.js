@@ -80,15 +80,8 @@ class KegControl extends React.Component {
       currentlyVisibleState = (
         <KegDetail
           keg={this.state.selectedKeg}
-          onClickingDrink={this.handleDrinkClick}
-        />
-      );
-      buttonText = "Return to Keg List";
-    } else if (this.state.selectedKeg != null) {
-      currentlyVisibleState = (
-        <KegDetail
-          keg={this.state.selectedKeg}
           onClickingDelete={this.handleDeletingKeg}
+          // onClickingDrink={this.handleDrinkClick}
         />
       );
       buttonText = "Return to Keg List";
