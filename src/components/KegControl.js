@@ -73,6 +73,9 @@ class KegControl extends React.Component {
     const newSelectedKeg = this.state.masterKegList.filter(
       (keg) => keg.id === id
     )[0];
+    if (newSelectedKeg.pints === 0) {
+      console.log("The hype is real. The keg is empty")
+    } else {
     const newPints = newSelectedKeg.pints - 1;
     const newKegPint = { ...newSelectedKeg, pints: newPints };
     const oldKegList = this.state.masterKegList.filter(
@@ -82,6 +85,7 @@ class KegControl extends React.Component {
       masterKegList: [...oldKegList, newKegPint],
       selectedKeg: newKegPint,
     });
+    }
   };
 
   render() {
