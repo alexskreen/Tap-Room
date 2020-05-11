@@ -30,7 +30,7 @@ KegDetail.propTypes = {
   ABV: PropTypes.string,
   pints: PropTypes.number,
   id: PropTypes.string,
-  onClickingEdit: PropTypes.func,
+  onClickingEdit: PropTypes.func
 };
 
 export default KegDetail;

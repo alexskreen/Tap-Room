@@ -74,17 +74,36 @@ class KegControl extends React.Component {
       (keg) => keg.id === id
     )[0];
     if (newSelectedKeg.pints === 0) {
-      console.log("The hype is real. The keg is empty")
+      console.log("The hype is real. The keg is empty");
     } else {
-    const newPints = newSelectedKeg.pints - 1;
-    const newKegPint = { ...newSelectedKeg, pints: newPints };
-    const oldKegList = this.state.masterKegList.filter(
-      (keg) => keg.id !== id
-    );
-    this.setState({
-      masterKegList: [...oldKegList, newKegPint],
-      selectedKeg: newKegPint,
-    });
+      const newPints = newSelectedKeg.pints - 1;
+      const newKegPint = { ...newSelectedKeg, pints: newPints };
+      const oldKegList = this.state.masterKegList.filter(
+        (keg) => keg.id !== id
+      );
+      this.setState({
+        masterKegList: [...oldKegList, newKegPint],
+        selectedKeg: newKegPint,
+      });
+    }
+  };
+
+  handleKegRefill = (id) => {
+    const newSelectedKeg = this.state.masterKegList.filter(
+      (keg) => keg.id === id
+    )[0];
+    if (newSelectedKeg.pints !== 0) {
+      console.log("Can't refill that keg! It isn't empty yet");
+    } else {
+      const newPints = newSelectedKeg.pints +124;
+      const newKegPint = { ...newSelectedKeg, pints: newPints };
+      const oldKegList = this.state.masterKegList.filter(
+        (keg) => keg.id !== id
+      );
+      this.setState({
+        masterKegList: [...oldKegList, newKegPint],
+        selectedKeg: newKegPint,
+      });
     }
   };
 
@@ -120,6 +139,7 @@ class KegControl extends React.Component {
           onKegSelection={this.handleChangingSelectedKeg}
           onClickingDelete={this.handleDeletingKeg}
           onClickingDrink={this.handleDrinkPint}
+          onClickingRefill={this.handleKegRefill}
         />
       );
       buttonText = "Add Keg";

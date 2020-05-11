@@ -10,6 +10,7 @@ function KegList(props) {
         <Keg
           whenKegClicked={props.onKegSelection}
           whenDrinkClicked={props.onClickingDrink}
+          whenRefillClicked={props.onClickingRefill}
           brewery={keg.brewery}
           beer={keg.beer}
           beerType={keg.beerType}

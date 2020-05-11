@@ -24,6 +24,9 @@ function Keg(props) {
           <button onClick={() => props.whenDrinkClicked(props.id)}>
             Have a pint. You deserve it
           </button>
+          <button onClick={() => props.whenRefillClicked(props.id)}>
+            Refill this keg
+          </button>
         </p>
       </div>
       <hr />
@@ -40,6 +43,7 @@ Keg.propTypes = {
   id: PropTypes.string,
   whenKegClicked: PropTypes.func,
   whenDrinkClicked: PropTypes.func,
+  whenRefillClicked: PropTypes.func
 };
 
 export default Keg;
