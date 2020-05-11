@@ -17,9 +17,6 @@ function KegDetail(props) {
       </p>
       <button onClick={props.onClickingEdit}>Edit Keg Details</button>{" "}
       <button onClick={() => props.onClickingDelete(keg.id)}>Delete Keg</button>
-      <button onClick={props.onClickingDrink}>
-        Have a pint. You deserve it
-      </button>
       <hr />
     </React.Fragment>
   );
@@ -27,9 +24,13 @@ function KegDetail(props) {
 
 KegDetail.propTypes = {
   keg: PropTypes.object,
+  brewery: PropTypes.string,
+  beer: PropTypes.string,
+  beerType: PropTypes.string,
+  ABV: PropTypes.string,
+  pints: PropTypes.number,
+  id: PropTypes.string,
   onClickingEdit: PropTypes.func,
-  // onClickingDrink: PropTypes.func,
-  // onClickingDelete: PropTypes.func
 };
 
 export default KegDetail;

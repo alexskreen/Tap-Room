@@ -69,6 +69,21 @@ class KegControl extends React.Component {
     });
   };
 
+  handleDrinkPint = (id) => {
+    const newSelectedKeg = this.state.masterKegList.filter(
+      (keg) => keg.id === id
+    )[0];
+    const newPints = newSelectedKeg.pints - 1;
+    const newKegPint = { ...newSelectedKeg, pints: newPints };
+    const oldKegList = this.state.masterKegList.filter(
+      (keg) => keg.id !== id
+    );
+    this.setState({
+      masterKegList: [...oldKegList, newKegPint],
+      selectedKeg: newKegPint,
+    });
+  };
+
   render() {
     let currentlyVisibleState = null;
     let buttonText = null;
@@ -99,6 +114,8 @@ class KegControl extends React.Component {
         <KegList
           kegList={this.state.masterKegList}
           onKegSelection={this.handleChangingSelectedKeg}
+          onClickingDelete={this.handleDeletingKeg}
+          onClickingDrink={this.handleDrinkPint}
         />
       );
       buttonText = "Add Keg";
